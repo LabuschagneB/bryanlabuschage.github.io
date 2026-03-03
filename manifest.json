@@ -2,10 +2,10 @@
     "name": "Bryan Labuschagne",
     "short_name": "Bryan Labuschagne",
     "theme_color": "#ffa801",
-    "background_color": "#ffa801",
+    "background_color": "#ffffff",
     "display": "standalone",
-    "scope": "/",
-    "start_url": "/",
+    "scope": "https://github.com/LabuschagneB/bryanlabuschage.github.io",
+    "start_url": "https://github.com/LabuschagneB/bryanlabuschage.github.io",
     "icons": [{
             "src": "images/icons/icon-72x72.png",
             "sizes": "72x72",
