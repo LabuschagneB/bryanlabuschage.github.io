@@ -5,8 +5,6 @@
     })
 
     $(document).ready(function () {
-
-
         //sticky menu
         var fixed_top = $(".header-1");
         $(window).on('scroll', function () {
@@ -38,7 +36,6 @@
 
         // Header Section Menu Part
         $("ul li ul").parent("li").addClass("menu-item-has-children");
-        $(".shop-menu>li .shop-submenu").parent("li").children("a").addClass("dd-icon-down");
 
         // drop down menu width overflow problem fix
         $('ul').parent().on('hover', function () {
@@ -51,7 +48,6 @@
                 });
             }
         });
-
 
         // scroll up start here
         $(function () {
@@ -80,9 +76,6 @@
             });
         });
 
-
-        //Isotope
-
         // Initialize Isotope after images are loaded
         imagesLoaded('.grid', function () {
             var $grid = $('.grid').isotope({
@@ -91,52 +84,7 @@
                     columnWidth: 0
                 }
             });
-
-            // Filter items on button click
-            $('.filter-button-group').on('click', '.filter-btn', function () {
-                var filterValue = $(this).attr('data-filter');
-                $grid.isotope({
-                    filter: filterValue
-                });
-            });
-
-            $('.filter-button-group').each(function (i, buttonGroup) {
-                var $buttonGroup = $(buttonGroup);
-                $buttonGroup.on('click', '.filter-btn', function () {
-                    $buttonGroup.find('.is-checked').removeClass('is-checked');
-                    $(this).addClass('is-checked');
-                });
-            });
         });
-
-
-
-        // blog slider
-        var swiper = new Swiper('.blog-content-wrapper', {
-            spaceBetween: 20,
-            slidesPerView: 1,
-            loop: true,
-            autoplay: {
-                delay: 10000,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: '.next-blog',
-                prevEl: '.prev-blog',
-            },
-
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                },
-                1200: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-            }
-        });
-
 
         //******* Testi-slider *******
         var swiper = new Swiper('.testi-slider', {
@@ -151,45 +99,6 @@
             },
             loop: true,
         });
-
-        //******* sponsore-slider *******
-        var swiper = new Swiper('.sponsore-content', {
-            slidesPerView: 3,
-            spaceBetween: 20,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            breakpoints: {
-                1200: {
-                    slidesPerView: 6,
-                },
-                992: {
-                    slidesPerView: 5,
-                },
-                576: {
-                    slidesPerView: 4,
-                }
-
-            }
-        });
-
-
-        //blog single slider
-        var swiper = new Swiper('.post-thumb-container', {
-            slidesPerView: 1,
-            autoplay: {
-                delay: 10000,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: '.thumb-next',
-                prevEl: '.thumb-prev',
-            },
-            loop: true,
-        });
-
     });
     //progressbar
     window.addEventListener('DOMContentLoaded', function () {
@@ -204,9 +113,6 @@
 
     });
 }(jQuery));
-
-
-
 
 
 //section scroll active nav
@@ -265,53 +171,6 @@ $(document).ready(function () {
         });
     });
 });
-
-
-
-
-
-
-//contact form js
-$(function () {
-    // Get the form.
-    var form = $('#contact-form');
-    // Get the messages div.
-    var formMessages = $('.form-message');
-    // Set up an event listener for the contact form.
-    $(form).submit(function (e) {
-        // Stop the browser from submitting the form.
-        e.preventDefault();
-        // Serialize the form data.
-        var formData = $(form).serialize();
-        // Submit the form using AJAX.
-        $.ajax({
-            type: 'POST',
-            url: $(form).attr('action'),
-            data: formData
-        })
-            .done(function (response) {
-                // Make sure that the formMessages div has the 'success' class.
-                $(formMessages).removeClass('error');
-                $(formMessages).addClass('success');
-                // Set the message text.
-                $(formMessages).text(response);
-                // Clear the form.
-                $('#contact-form input, #contact-form textarea').val('');
-            })
-            .fail(function (data) {
-                // Make sure that the formMessages div has the 'problem' class.
-                $(formMessages).removeClass('success');
-                $(formMessages).addClass('problem');
-                // Set the message text.
-                if (data.responseText !== '') {
-                    $(formMessages).text(data.responseText);
-                } else {
-                    $(formMessages).text('Oops! An error occured and your message could not be sent.');
-                }
-            });
-    });
-});
-
 
 //auto year
 const year = new Date().getFullYear();
