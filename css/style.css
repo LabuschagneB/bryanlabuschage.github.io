@@ -24,7 +24,7 @@ body {
   background: #03032B;
 }
 
-header.header-1.header-fixed {
+header.header.header-fixed {
   position: fixed;
   width: 100%;
   top: 0;
@@ -348,6 +348,16 @@ h6 {
   opacity: 1;
 }
 
+.preloader {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -440,43 +450,6 @@ h6 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*Common classes end*/
 
 header {
@@ -497,13 +470,13 @@ header .header-bar span {
   background-color: #fff;
 }
 
-header.header-1 {
+header.header {
   border-bottom: none;
   background-color: transparent;
   width: 100%;
 }
 
-header.header-1 .logo a h3 {
+header.header .logo a h3 {
   color: #fff;
 }
 
@@ -1216,13 +1189,13 @@ header.header-1 .logo a h3 {
   margin-bottom: 50px;
 }
 
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-slider {
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider {
   overflow: hidden;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-slider .swiper-wrapper .testi-item {
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider .swiper-wrapper .testi-item {
   background-color: transparent;
   flex-direction: column;
   justify-content: center;
@@ -1234,7 +1207,7 @@ header.header-1 .logo a h3 {
 }
 
 @media (min-width: 992px) {
-  .testimonial-section .testimonial-section-wrapper .testimonial-content .testi-slider .swiper-wrapper .testi-item::before {
+  .testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider .swiper-wrapper .testi-item::before {
     position: absolute;
     content: "";
     background: url(../images/blockquate-left.png);
@@ -1249,7 +1222,7 @@ header.header-1 .logo a h3 {
 }
 
 @media (min-width: 992px) {
-  .testimonial-section .testimonial-section-wrapper .testimonial-content .testi-slider .swiper-wrapper .testi-item::after {
+  .testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider .swiper-wrapper .testi-item::after {
     position: absolute;
     content: "";
     background: url(../images/blockquate-right.png);
@@ -1264,33 +1237,33 @@ header.header-1 .logo a h3 {
 }
 
 @media (max-width: 575px) {
-  .testimonial-section .testimonial-section-wrapper .testimonial-content .testi-slider .swiper-wrapper .testi-item {
+  .testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider .swiper-wrapper .testi-item {
     padding: 30px 15px;
   }
 }
 
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-slider .swiper-wrapper .testi-item .testi-thumb img {
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider .swiper-wrapper .testi-item .testi-thumb img {
   border-radius: 50%;
 }
 
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-slider .swiper-wrapper .testi-item .testi-content p {
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider .swiper-wrapper .testi-item .testi-content p {
   color: #fff7e9;
   font-size: 18px;
   margin-bottom: 30px;
   max-width: 50ch;
 }
 
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-slider .swiper-wrapper .testi-item .testi-content .testi-author h6 {
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider .swiper-wrapper .testi-item .testi-content .testi-author h6 {
   color: #ffa801;
 }
 
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-slider .swiper-wrapper .testi-item .testi-content .testi-author p {
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider .swiper-wrapper .testi-item .testi-content .testi-author p {
   color: #0ebeff;
   font-weight: 700;
 }
 
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-next,
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-prev {
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider-next,
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider-prev {
   font-size: 35px;
   width: 50px;
   height: 50px;
@@ -1309,27 +1282,27 @@ header.header-1 .logo a h3 {
 }
 
 @media (min-width: 768px) {
-  .testimonial-section .testimonial-section-wrapper .testimonial-content .testi-next,
-  .testimonial-section .testimonial-section-wrapper .testimonial-content .testi-prev {
+  .testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider-next,
+  .testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider-prev {
     display: inline-block;
   }
 }
 
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-next:hover,
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-prev:hover {
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider-next:hover,
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider-prev:hover {
   background-color: #0ebeff;
 }
 
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-next {
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider-next {
   right: 1%;
 }
 
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-prev {
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider-prev {
   left: 1%;
 }
 
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-next svg,
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-prev svg {
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider-next svg,
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider-prev svg {
   vertical-align: sub;
 }
 
@@ -1367,13 +1340,13 @@ header.header-1 .logo a h3 {
 /* @@@@@@@@@@@@@  Extend Property CSS Writing Now  @@@@@@@@@@@@@@ */
 
 .portfolio-section .grid .grid-item .grid-inner .grid-content,
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-slider .swiper-wrapper .testi-item {
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider .swiper-wrapper .testi-item {
   display: flex;
   flex-wrap: wrap;
 }
 
 .relative,
-header.header-1,
+header.header,
 .menu li a.current,
 .menu li a:hover,
 .portfolio-section .grid .grid-item .grid-inner,
@@ -1381,17 +1354,17 @@ header.header-1,
 .education-section .education-section-wrapper .education-content .edu-item-wrapper .edu-item .edu-item-inner .edu-item-content,
 .education-section .education-section-wrapper .education-content .edu-item-wrapper .edu-item .edu-item-inner .edu-item-content .session,
 .testimonial-section .testimonial-section-wrapper .testimonial-content,
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-slider .swiper-wrapper .testi-item {
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider .swiper-wrapper .testi-item {
   position: relative;
 }
 
-header.header-1,
+header.header,
 .menu li a.current::after,
 .menu li a:hover::after,
 .portfolio-section .grid .grid-item .grid-inner:before,
 .portfolio-section .grid .grid-item .grid-inner .grid-content,
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-next,
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-prev {
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider-next,
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider-prev {
   position: absolute;
   content: "";
 }
@@ -1401,7 +1374,7 @@ header.header-1,
   overflow: hidden;
 }
 
-.testimonial-section .testimonial-section-wrapper .testimonial-content .testi-slider .swiper-wrapper .testi-item .testi-thumb {
+.testimonial-section .testimonial-section-wrapper .testimonial-content .testimonial-slider .swiper-wrapper .testi-item .testi-thumb {
   margin-bottom: 20px;
 }
 
